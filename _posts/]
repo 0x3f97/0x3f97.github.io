@@ -1,0 +1,33 @@
+---
+title: Debug router with TTL
+categories:
+  - exploit
+tags: router-exploitation
+published: true
+---
+
+# Introduction
+
+一些路由器默认无法通过 telnet 或者 ssh 登录，除了可以对固件添加自定义后门后进行重打包，还可以通过路由器上提供的
+TTL 或者 JTAG 来连接路由器，对其进行调试。
+
+# Flash router to origin firmware
+
+如果路由器是刷过 openwrt 或者 ddwrt 的，无法直接通过 web 服务刷回原厂固件。最近入了个二手 netgear wndr3800，
+详细信息可以看 openwrt 的 [wiki](https://wiki.openwrt.org/toh/netgear/wndr3800)，支持 JTAG 和 Serial 即 TTL。
+拿到手的时候别人已经刷好了 openwrt，而我们要对原厂固件进行测试就要刷回来。openwrt 默认是开启了 ssh 的，尝试
+默认密码登录上去，可以 scp 或者 wget 上传原厂固件，上传后执行以下命令：
+
+```bash
+mtd -rf write WNDR3800-V1.0.0.52.img firmware   # *** OpenWrt中执行 ***
+mtd -r write WNDR3800-V1.0.0.52.img linux       # *** DD-Wrt中执行  ***
+```
+
+之后路由器会重启，至电源灯闪烁绿灯时表示已开启 tftpd 服务等待 tftp 上传。其实不用 ssh 登录也行，开启电源时按住
+reset 键不放，路由器电源灯先会黄灯闪烁然后等到绿灯闪烁时表示已开启 tftpd 服务，上传之前设置本机为静态ip
+
+![]({{site.baseurl}}/images/05-19-18-1.png)
+
+# Reference
+
+- [How to Debrick Your NETGEAR WNR3500L Using Ubuntu 10.04 Lucid Lynx](https://www.myopenrouter.com/article/how-debrick-your-netgear-wnr3500l-using-ubuntu-1004-lucid-lynx)
