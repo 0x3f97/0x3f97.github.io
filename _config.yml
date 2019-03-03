@@ -120,6 +120,7 @@ menu:
   categories: /categories/
   #about: /about/
   webkit: /webkit/
+  safari: /webkit/
   archives: /archives/
   tags: /tags/
   #sitemap: /sitemap.xml
@@ -137,6 +138,7 @@ menu_icons:
   home: home
   about: user
   webkit: safari
+  safari: compass
   categories: th
   schedule: calendar
   tags: tags
@@ -152,8 +154,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
+#scheme: Muse
+scheme: Mist
 #scheme: Pisces
 
 
@@ -292,10 +294,10 @@ sidebar:
 # ---------------------------------------------------------------
 
 # Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
+scroll_to_more: false
 
 # Automatically saving scroll position on each post/page in cookies.
-save_scroll: false
+save_scroll: enable
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: false
@@ -316,7 +318,7 @@ post_meta:
 # Post wordcount display settings
 post_wordcount:
   item_text: true
-  wordcount: false
+  wordcount: true
   min2read: false
   separated_meta: true
 
@@ -352,7 +354,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night eighties
 
 
 # ---------------------------------------------------------------
@@ -379,7 +381,7 @@ han: false
 
 # Disqus
 disqus:
-  enable: false
+  enable: enable
   shortname:
   count: true
   # hide comments (visitors need to click to load the comments)
@@ -446,7 +448,7 @@ duoshuo_info:
   ua_enable: true
   admin_enable: false
   user_id: 0
-  #admin_nickname: Author
+  admin_nickname: Author
 
 
 # Facebook SDK Support.
