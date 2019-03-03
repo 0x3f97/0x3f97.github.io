@@ -119,6 +119,7 @@ menu:
   home: /
   categories: /categories/
   #about: /about/
+  webkit: /webkit/
   archives: /archives/
   tags: /tags/
   #sitemap: /sitemap.xml
@@ -135,6 +136,7 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
+  webkit: safari
   categories: th
   schedule: calendar
   tags: tags
@@ -253,8 +255,8 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right
-  position: left
-  #position: right
+  #position: left
+  position: right
 
   # Sidebar Display, available value:
   #  - post    expand on posts automatically. Default.
@@ -296,7 +298,7 @@ scroll_to_more: true
 save_scroll: false
 
 # Automatically excerpt description in homepage as preamble text.
-excerpt_description: true
+excerpt_description: false
 
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
